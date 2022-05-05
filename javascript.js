@@ -25,18 +25,23 @@ btn.addEventListener('click', function() {
     // let setSize = 'repeat(gridSize, 20px)'
     styleBox.style.gridTemplateColumns = 'repeat(16, 20px)';
 
-    let squareSize = gridSize * gridSize
+    if (gridSize > 100) {
+        gridSize = +prompt('How big of a grid do you want. max 100')
+    } else {
 
-    for (let i = 0; i < squareSize; i++) {
+        let squareSize = gridSize * gridSize
 
-        addDivs()
-    }
+        for (let i = 0; i < squareSize; i++) {
 
-    const addHover = document.querySelectorAll('.container > div')
+            addDivs()
+        }
 
-    for (let i = 0; i < addHover.length; i++){
-        addHover[i].addEventListener("mouseenter", function(event) {
-            event.target.style.backgroundColor = "black";
-        })
+        const addHover = document.querySelectorAll('.container > div')
+
+        for (let i = 0; i < addHover.length; i++){
+            addHover[i].addEventListener("mouseenter", function(event) {
+                event.target.style.backgroundColor = "black";
+            })
+        }
     }
 })
